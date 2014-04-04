@@ -6,10 +6,11 @@ feature 'user registration', %Q{
   So that I can manage my work RVUs
   } do
 
-  # * I must provide first and last name
-  # * I must provide valid email address
-  # * I must select a role for account
-  # * I must provide a password with password confirmation
+  # ACCEPTANCE CRITERIA
+  # I must provide first and last name
+  # I must provide valid email address
+  # I must select a role for account
+  # I must provide a password with password confirmation
 
   scenario 'a user signs up' do
     visit root_path
