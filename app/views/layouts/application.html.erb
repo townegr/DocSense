@@ -14,6 +14,11 @@
   <body>
 
     <%= render 'layouts/messages' %>
+    <% if user_signed_in? %>
+      <%= "Welcome Dr. #{current_user.full_name}!" %>
+    <% else %>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
