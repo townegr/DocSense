@@ -4,16 +4,38 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :first_name, label: 'First Name', required: true %>
-    <%= f.input :last_name, label: 'Last Name', required: true %>
-    <%= f.input :email, label: 'Email Address', required: true, autofocus: true %>
-    <%= f.input :job_title, label: 'Job Title', collection: ['Medical Provider', 'Administrative Staff'] %>
-    <%= f.input :password, required: true %>
-    <%= f.input :password_confirmation, required: true %>
-  </div>
+    <div class="row">
+      <div class="small-12 medium-4 columns">
+        <%= f.input :first_name, label: 'First Name', required: true %>
+      </div>
+      <div class="small-12 medium-4 columns">
+        <%= f.input :last_name, label: 'Last Name', required: true %>
+      </div>
+      <div class="small-12 medium-4 columns">
+        <%= f.input :email, label: 'Email Address', required: true, autofocus: true %>
+      </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign Up" %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.input :job_title, label: 'Job Title', collection: ['Medical Provider', 'Administrative Staff'] %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <%= f.input :password, required: true %>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <%= f.input :password_confirmation, required: true %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <%= f.button :submit, "Sign Up" %>
+      </div>
+    </div>
   </div>
 <% end %>
 

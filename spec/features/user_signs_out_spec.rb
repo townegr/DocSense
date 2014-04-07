@@ -7,10 +7,11 @@ feature 'user sign out', %Q{
 } do
 
   # ACCEPTANCE CRITERIA
-  # Once signed in, I must be able to log out
+  # I must be able to log out after previously signing in
 
-  scenario 'a signed-in user can log out of his account' do
-    user = FactoryGirl.create(:user)
+  let(:user) { FactoryGirl.create(:user) }
+
+  scenario 'user can log out' do
     sign_in_as(user)
     click_on 'Log Out'
 
