@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'foundation-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'jquery-ui-rails'
 
 group :development do
   gem 'quiet_assets'

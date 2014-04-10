@@ -1,0 +1,12 @@
+<h1>Schedules</h1>
+
+<div>
+  <% simple_form_for @schedule do |f| %>
+    <h2><%= link_to schedule.encounter_date, schedule %></h2>
+    <p>Published on <%= schedule.encounter_date.strftime("%B %e, %Y") %></p>
+
+    <p><%= link_to "Edit schedule", edit_schedule_path(schedule) %></p>
+  <% end %>
+</div>
+
+<p><%= link_to "New schedule", new_schedule_path %></p>

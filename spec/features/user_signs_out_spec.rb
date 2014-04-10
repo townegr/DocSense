@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'user sign out', %Q{
+feature 'user signs out', %Q{
   As an authenticated user
   I want to sign out
   So that I can exit the system
@@ -16,6 +16,6 @@ feature 'user sign out', %Q{
     click_on 'Log Out'
 
     expect(page).to have_content('Signed out successfully.')
-    expect(current_path).to eq(root_path)
+    expect(current_url).to eq(root_url)
   end
 end
