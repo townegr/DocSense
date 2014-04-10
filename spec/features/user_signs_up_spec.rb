@@ -16,7 +16,7 @@ feature 'user registration', %Q{
 
   scenario 'user provides valid information when signing up' do
 
-    visit root_path
+    visit root_url
     click_on 'Sign Up'
 
     fill_in 'First Name', with: user.first_name
@@ -32,11 +32,11 @@ feature 'user registration', %Q{
 
     expect(page).to have_content('You have successfully signed up.')
     expect(page).to have_content("Welcome Dr. #{user.full_name}!")
-    expect(current_path).to eq(root_path)
+    expect(current_url).to eq(root_url)
   end
 
   scenario 'user provides invalid information when signing up' do
-    visit root_path
+    visit root_url
     click_on 'Sign Up'
 
     within('form') do

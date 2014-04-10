@@ -16,5 +16,6 @@ feature 'a user signs in', %Q{
 
     expect(page).to have_content("Welcome Dr. #{user.full_name}")
     expect(page).to have_content('Successfully signed in.')
+    expect(current_url).to eq(root_url)
   end
 end
