@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
       :first_name,
       :last_name,
       :email,
+      :dollar_per_rvu,
       :job_title,
       :password,
       :password_confirmation

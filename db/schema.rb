@@ -11,18 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403203921) do
+ActiveRecord::Schema.define(version: 20140411015648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "schedules", force: true do |t|
-    t.string  "title"
-    t.date    "encounter_date", null: false
-    t.integer "commission"
-    t.integer "procedure_id"
-    t.integer "patient_id"
-    t.integer "user_id"
+  create_table "encounters", force: true do |t|
+    t.text    "notes"
+    t.integer "procedure_id", null: false
+    t.integer "patient_id",   null: false
+    t.integer "user_id",      null: false
+  end
+
+  add_index "encounters", ["patient_id"], name: "index_encounters_on_patient_id", using: :btree
+  add_index "encounters", ["procedure_id"], name: "index_encounters_on_procedure_id", using: :btree
+  add_index "encounters", ["user_id"], name: "index_encounters_on_user_id", using: :btree
+
+  create_table "patients", force: true do |t|
+    t.string "name",               null: false
+    t.string "insurance_provider"
+    t.date   "date_of_birth"
+    t.string "primary_md"
+  end
+
+  create_table "procedures", force: true do |t|
+    t.integer "code",                                null: false
+    t.string  "description",                         null: false
+    t.decimal "work_rvu",    precision: 5, scale: 2, null: false
   end
 
   create_table "users", force: true do |t|

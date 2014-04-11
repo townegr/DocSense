@@ -22,6 +22,7 @@ feature 'user registration', %Q{
     fill_in 'First Name', with: user.first_name
     fill_in 'Last Name', with: user.last_name
     fill_in 'Email Address', with: 'test@email.com'
+    fill_in 'RVU Dollar Amount', with: user.dollar_per_rvu
     select 'Medical Provider', from: 'Job Title'
     fill_in 'user_password', with: user.password
     fill_in 'user_password_confirmation', with: user.password_confirmation

@@ -17,7 +17,10 @@
     </div>
 
     <div class="row">
-      <div class="small-12 columns">
+      <div class="small-12 medium-6 columns">
+        <%= f.input :dollar_per_rvu, label: 'RVU Dollar Amount', required: true %>
+      </div>
+      <div class="small-12 medium-6 columns">
         <%= f.input :job_title, label: 'Job Title', collection: ['Medical Provider', 'Administrative Staff'] %>
       </div>
     </div>
