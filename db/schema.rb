@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140411015648) do
   end
 
   create_table "procedures", force: true do |t|
-    t.integer "code",                                null: false
+    t.string  "code",                                null: false
     t.string  "description",                         null: false
     t.decimal "work_rvu",    precision: 5, scale: 2, null: false
   end

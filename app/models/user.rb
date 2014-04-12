@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :encounters
+  has_many :patients, through: :encounters
+  has_many :procedures, through: :encounters
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :dollar_per_rvu, numericality: { only_integer: true }
