@@ -3,7 +3,6 @@ FactoryGirl.define do
     notes 'Comments for patient-procedure'
 
     procedure
-    patient
     user
   end
 end

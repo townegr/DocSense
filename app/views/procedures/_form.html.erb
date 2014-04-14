@@ -1,0 +1,8 @@
+<%= simple_form_for @procedure do |f| %>
+  <%= f.input :patient_name, label: 'Patient Name' %>
+  <%= f.input :insurance_provider, label: 'Insurance Provider' %>
+  <%= f.input :description, label: 'Procedure Type' %>
+  <%= f.input :code, label: 'Code' %>
+  <%= f.input :work_rvu, label: 'Work RVU' %>
+  <%= f.button :submit, 'Add Procedure' %>
+<% end %>

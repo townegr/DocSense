@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Procedure do
   it { should have_many(:encounters) }
   it { should have_many(:users) }
-  it { should have_many(:patients) }
 
   #write test for (:code).where('A1234', '12345') valid & invalid
   it { should validate_presence_of(:code) }

@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :encounters
-  has_many :patients, through: :encounters
   has_many :procedures, through: :encounters
 
   validates :first_name, presence: true

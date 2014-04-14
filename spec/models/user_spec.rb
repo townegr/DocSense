@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe User do
   it { should have_many(:encounters) }
-  it { should have_many(:patients) }
   it { should have_many(:procedures) }
 
   it { should validate_presence_of(:first_name) }

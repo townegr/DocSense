@@ -1,0 +1,22 @@
+<div>
+<% @procedures.each do |procedure| %>
+  <table>
+    <thead>
+      <tr>
+        <td>Patient Name</td>
+        <td>Insurance Provider</td>
+        <td>Procedure Description</td>
+        <td>Work RVU</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= procedure.patient_name %></td>
+        <td><%= procedure.insurance_provider %></td>
+        <td><%= procedure.description %></td>
+        <td><%= procedure.work_rvu %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+</div>
