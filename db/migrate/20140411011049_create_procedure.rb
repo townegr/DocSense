@@ -3,9 +3,7 @@ class CreateProcedure < ActiveRecord::Migration
     create_table :procedures do |t|
       t.string :code, null: false
       t.string :description, null: false
-      t.integer :work_rvu, null: false
-      t.string :patient_name, null: false
-      t.string :insurance_provider
+      t.float :work_rvu, null: false
     end
   end
 end
