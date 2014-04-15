@@ -1,6 +1,7 @@
 <%= simple_form_for @procedure do |f| %>
-  <%= f.input :patient_name, label: 'Patient Name' %>
-  <%= f.input :insurance_provider, label: 'Insurance Provider' %>
+  <%= f.association :encounter, label_method: :patient_name, label: 'Patient Name' %>
+  <%= f.association :encounter, label_method: :insurance_provider, label: 'Insurance Provider' %>
+  <%= f.association :encounter, label_method: :notes, label: 'Notes' %>
   <%= f.input :description, label: 'Procedure Type' %>
   <%= f.input :code, label: 'Code' %>
   <%= f.input :work_rvu, label: 'Work RVU' %>

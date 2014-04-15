@@ -24,6 +24,6 @@ class ProceduresController < ApplicationController
 
   protected
   def procedure_params
-    params.require(:procedure).permit(:patient_name, :description, :code, :work_rvu, :insurance_provider)
+    params.require(:procedure).permit(:description, :code, :work_rvu)
   end
 end
