@@ -7,6 +7,7 @@
         <th>Procedure Description</th>
         <th>HCPCS Code</th>
         <th>Work RVU</th>
+        <th>Physician Fee</th>
       </tr>
     </thead>
     <tbody>
@@ -15,8 +16,10 @@
         <td><%= encounter.procedure.description %></td>
         <td><%= encounter.procedure.code %></td>
         <td><%= encounter.procedure.work_rvu %></td>
+        <td>$<%= encounter.compensation %></td>
       </tr>
     </tbody>
   </table>
+<%= button_to 'More Details', encounter, method: :get %>
 <% end %>
 </div>

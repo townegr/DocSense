@@ -1,0 +1,62 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="/">Home</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon">
+      <h1><a href="#">Menu</a></h1>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="left">
+      <li class="has-dropdown">
+        <a href="/encounters">Schedule</a>
+        <ul class="dropdown">
+          <li><a href="/encounters/new">Schedule</a></li>
+          <li><a href="/encounters/new">Calendar</a></li>
+          <li><a href="/encounters/new">Appointment</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/encounters">Clinical</a>
+        <ul class="dropdown">
+          <li><a href="/encounters/new">Clinical Notes</a></li>
+          <li><a href="/encounters/new">CMS Rules</a></li>
+          <li><a href="/encounters/new">Audit Log</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/encounters">Patients</a>
+        <ul class="dropdown">
+          <li><a href="/encounters/new">Patient</a></li>
+          <li><a href="/encounters/new">Patient List</a></li>
+          <li><a href="/encounters/new">Analytics</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/encounters">Reports</a>
+        <ul class="dropdown">
+          <li><a href="/encounters/new">Practice</a></li>
+          <li><a href="/encounters/new">Productivity Report</a></li>
+          <li><a href="/encounters/new">Advanced Report</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="right">
+      <% if user_signed_in? %>
+        <li class="has-dropdown">
+          <a href="/encounters">Account</a>
+          <ul class="dropdown">
+            <li><%= link_to "Log Out", destroy_user_session_url, method: :delete %></li>
+            <li><a href="/encounters/new">Report Problem</a></li>
+            <li><a href="/encounters/new">Help</a></li>
+      <% else %>
+            <li><%= link_to 'Sign In', new_user_session_url %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_url %></li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</nav>

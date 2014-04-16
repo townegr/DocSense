@@ -28,9 +28,11 @@ ActiveRecord::Schema.define(version: 20140411011049) do
   add_index "encounters", ["user_id"], name: "index_encounters_on_user_id", using: :btree
 
   create_table "procedures", force: true do |t|
-    t.string "code",        null: false
-    t.string "description", null: false
-    t.float  "work_rvu",    null: false
+    t.string   "code",        null: false
+    t.string   "description", null: false
+    t.float    "work_rvu",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

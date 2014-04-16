@@ -2,12 +2,27 @@
   <table>
     <thead>
       <tr>
-        <td><h3><%= @procedure.patient_name %></h3></td>
+        <td><h3><%#= @encounter.patient_name %></h3></td>
+      </tr>
+      <tr>
+        <h3>Insurance Provider</h3>
+      </tr>
+      <tr>
+        <h3>Notes<h3>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Notes:</td>
+
+      </tr>
+      <tr>
+        <%= @encounter.insurance_provider %>
+      </tr>
+      <tr>
+        <%= @encounter.notes %>
+      </tr>
+      <tr>
+
       </tr>
     </tbody>
   </table>

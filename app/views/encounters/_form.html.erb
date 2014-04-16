@@ -2,8 +2,6 @@
   <%= f.input :patient_name, label: 'Patient Name' %>
   <%= f.input :insurance_provider, label: 'Insurance Provider' %>
   <%= f.association :procedure, label_method: :description, label: 'Procedure Description' %>
-  <%= f.association :procedure, label_method: :code, label: 'Code' %>
-  <%= f.association :procedure, label_method: :work_rvu, label: 'Work RVU' %>
   <%= f.input :notes, label: 'Notes' %>
   <%= f.button :submit, 'Add Encounter' %>
 <% end %>

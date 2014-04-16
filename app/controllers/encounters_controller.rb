@@ -11,6 +11,7 @@ class EncountersController < ApplicationController
 
   def create
     @encounter = Encounter.new(encounter_params)
+
     if @encounter.save
       redirect_to encounters_url, notice: 'Encounter added to schedule'
     else
@@ -24,6 +25,6 @@ class EncountersController < ApplicationController
 
   protected
   def encounter_params
-    params.require(:encounter).permit(:patient_name, :insurance_provider, :notes, :procedure_id, :user_id)
+    params.require(:encounter).permit(:patient_name, :insurance_provider, :notes, :procedure_id).merge(user: current_user)
   end
 end

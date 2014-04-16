@@ -1,0 +1,19 @@
+<table>
+  <tbody>
+    <tr>
+      <th scope="rowgroup" colspan="4"><%= @encounter.patient_name %></th>
+    </tr>
+    <tr>
+      <th>Insurance Provider</th>
+      <td><%= @encounter.insurance_provider %></td>
+    </tr>
+    <tr>
+      <th>Primary MD</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Diagnosis Notes</th>
+      <td><%= @encounter.notes %></td>
+    </tr>
+  </tbody>
+</table>

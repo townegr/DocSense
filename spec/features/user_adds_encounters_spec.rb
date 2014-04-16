@@ -21,14 +21,11 @@ feature 'physician adds procedures to a list',  %Q{
     encounter = FactoryGirl.build(:encounter, procedure: nil)
     prev_count = Encounter.count
     sign_in_as(user)
-    visit new_encounter_url
+    visit new_encounter_path
 
     fill_in 'Patient Name', with: encounter.patient_name
     fill_in 'Insurance Provider', with: encounter.insurance_provider
-    binding.pry
     select procedure.description, from: 'Procedure Description'
-    select procedure.code, from: 'Code'
-    select procedure.work_rvu, from: 'Work RVU'
     fill_in 'Notes', with: encounter.notes
     click_on 'Add Encounter'
 
@@ -36,12 +33,16 @@ feature 'physician adds procedures to a list',  %Q{
     expect(Encounter.count).to eq(prev_count + 1)
   end
 
-  # scenario 'physician can review a specific procedure and notes' do
-  #   procedure = FactoryGirl.create(:procedure)
-  #   sign_in_as(user)
-  #   visit new_procedure_path
-  #   click_on 'Add Procedure'
+  scenario 'physician can review a specific encounter' do
+    encounter = FactoryGirl.create(:encounter)
+    procedure = FactoryGirl.create(:procedure)
+    sign_in_as(user)
+    visit encounters_url
+    expect(page).to have_content(encounter.patient_name)
 
-  #   expect(current_url).to eq(procedures_url)
-  # end
+    click_button 'More Details'
+
+    expect(page).to have_content(encounter.notes)
+    expect(current_url).to eq(encounter_url(encounter))
+  end
 end

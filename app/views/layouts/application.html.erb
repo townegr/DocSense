@@ -12,17 +12,9 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <%= render 'layouts/messages' %>
-        <% if user_signed_in? %>
-          <%= "Welcome Dr. #{current_user.full_name}!" %>
-          <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'Sign Up', new_user_registration_path %>
-        <% end %>
-      </ul>
-    </nav>
+    <%= render 'layouts/messages' %>
+    <%= render 'layouts/navbar' %>
+
     <div class="row">
       <div class="small-12 columns">
         <%= yield %>
