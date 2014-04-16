@@ -11,6 +11,7 @@ class EncountersController < ApplicationController
 
   def create
     @encounter = Encounter.new(encounter_params)
+    @encounter.set_physician_fee
 
     if @encounter.save
       redirect_to encounters_url, notice: 'Encounter added to schedule'

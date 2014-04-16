@@ -7,7 +7,7 @@ class Encounter < ActiveRecord::Base
   validates :user, presence: true
   validates :procedure, presence: true
 
-  def compensation
-    user.dollar_per_rvu*procedure.work_rvu
+  def set_physician_fee
+    self.physician_fee = user.dollar_per_rvu * procedure.work_rvu
   end
 end

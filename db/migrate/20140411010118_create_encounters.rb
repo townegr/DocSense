@@ -6,6 +6,7 @@ class CreateEncounters < ActiveRecord::Migration
       t.text :notes
       t.integer :procedure_id, null: false
       t.integer :user_id, null: false
+      t.float :physician_fee
 
       t.timestamps
     end

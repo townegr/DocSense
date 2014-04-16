@@ -14,6 +14,13 @@ feature 'physician can retrieve productivity data', %Q{
 
   scenario 'physician can retrieve patient/procedure encounters' do
     visit root_url
-    click_on
+    click_on 'Productivity Report'
+
+    select '2014/01/01', from: 'Beginning Date'
+    select '2014/01/07', from: 'Ending Date'
+    click_on 'Create Report'
+
+    expect(page).to have_content('Physician Fee')
+    expect(current_url).to eq(report_url)
   end
 end

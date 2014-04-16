@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140411011049) do
     t.text     "notes"
     t.integer  "procedure_id",       null: false
     t.integer  "user_id",            null: false
+    t.float    "physician_fee"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
