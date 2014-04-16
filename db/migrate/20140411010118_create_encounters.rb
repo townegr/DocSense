@@ -6,6 +6,8 @@ class CreateEncounters < ActiveRecord::Migration
       t.text :notes
       t.integer :procedure_id, null: false
       t.integer :user_id, null: false
+
+      t.timestamps
     end
     add_index :encounters, :procedure_id
     add_index :encounters, :user_id

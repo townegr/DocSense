@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'physician adds procedures to a list',  %Q{
+feature 'physician adds procedures to a list', %Q{
   As an authenticated physician/user
   I want to create a new instance of a procedure
   So that I can populate my schedule with relevant procedure code and work RVU
