@@ -16,11 +16,15 @@ feature 'physician can retrieve productivity data', %Q{
     visit root_url
     click_on 'Productivity Report'
 
-    select '2014/01/01', from: 'Beginning Date'
-    select '2014/01/07', from: 'Ending Date'
+    select 'April', from: 'Start Month'
+    select '1', from: 'Start Day'
+    select '2014', from: 'Start Year'
+    select 'April', from: 'End Month'
+    select '14', from: 'End Day'
+    select '2014', from: 'End Year'
     click_on 'Create Report'
 
-    expect(page).to have_content('Physician Fee')
+    expect(page).to have_content('Janet Appleseed', 'Jerry Lewis')
     expect(current_url).to eq(report_url)
   end
 end

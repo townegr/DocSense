@@ -2,6 +2,11 @@ RainMaker::Application.routes.draw do
   devise_for :users
   resources :procedures
   resources :encounters
+  resources :reports, only: [:new, :create]
+
+
+  get '/report' => 'reports#report'
+
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

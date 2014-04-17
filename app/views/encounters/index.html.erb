@@ -21,5 +21,15 @@
     </tbody>
   </table>
 <%= button_to 'More Details', encounter, method: :get %>
+<%= button_to encounter.created_at, encounter, method: :get %>
 <% end %>
+</div>
+
+
+
+<div>
+  <%= button_to 'Create New', new_encounter_path %>
+</div>
+<div>
+  <%=
 </div>

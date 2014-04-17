@@ -6,7 +6,12 @@ class EncountersController < ApplicationController
   end
 
   def index
-    @encounters = Encounter.all
+    # if there are the start_date and end_date params
+      # report = Report.new(pass in the params)
+      # @encounters = report.encounters
+    # else
+      @encounters = Encounter.all
+    # end
   end
 
   def create
