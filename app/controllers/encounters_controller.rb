@@ -28,6 +28,7 @@ class EncountersController < ApplicationController
   end
 
   def show
+    binding.pry
     @encounter = Encounter.find(params[:id])
   end
 

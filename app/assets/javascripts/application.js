@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.datepicker
 //= require foundation
+//= require pickadate/picker
+//= require pickadate/picker.date
 //= require_tree .
 //= require fullcalendar
 
@@ -24,5 +25,7 @@ $(document).ready(function() {
     $('#calendar').fullCalendar({
         // put your options and callbacks here
     })
+    $(document).foundation();
+    $('.datepicker').pickadate();
 
 });

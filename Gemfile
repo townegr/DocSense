@@ -29,6 +29,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'jquery-ui-rails'
 gem 'fullcalendar-rails'
+gem 'pickadate-rails'
 
 group :development do
   gem 'quiet_assets'
