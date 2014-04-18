@@ -10,12 +10,14 @@ class EncountersController < ApplicationController
       # report = Report.new(pass in the params)
       # @encounters = report.encounters
     # else
-      @encounters = Encounter.all
+      @encounters = Encounter.where(user: current_user)
+      # @encounters = Encounter.where(user: current_user)
     # end
   end
 
   def create
     @encounter = Encounter.new(encounter_params)
+    @encounter.user_id = current_user.id
     @encounter.set_physician_fee
 
     if @encounter.save

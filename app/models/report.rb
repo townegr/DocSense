@@ -10,6 +10,5 @@ class Report
 
   def encounters
     @encounters = Encounter.where(created_at: DateTime(start_date).beginning_of_day..DateTime(end_date).end_of_day)
-
   end
 end
