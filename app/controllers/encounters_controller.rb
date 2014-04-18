@@ -6,11 +6,17 @@ class EncountersController < ApplicationController
   end
 
   def index
-    @encounters = Encounter.all
+    # if there are the start_date and end_date params
+      # report = Report.new(pass in the params)
+      # @encounters = report.encounters
+    # else
+      @encounters = Encounter.all
+    # end
   end
 
   def create
     @encounter = Encounter.new(encounter_params)
+    @encounter.set_physician_fee
 
     if @encounter.save
       redirect_to encounters_url, notice: 'Encounter added to schedule'

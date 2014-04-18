@@ -27,9 +27,9 @@ feature 'user registration', %Q{
     fill_in 'user_password', with: user.password
     fill_in 'user_password_confirmation', with: user.password_confirmation
 
-    within('form') do
+    save_and_open_page
       click_on 'Sign Up'
-    end
+
 
     expect(page).to have_content('You have successfully signed up.')
     expect(page).to have_content("Welcome Dr. #{user.full_name}!")

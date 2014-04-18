@@ -1,0 +1,7 @@
+<h1>Create Report</h1>
+
+<%= simple_form_for :report, url: '/reports', method: 'post' do |f| %>
+  <%= f.input :start_date, label: 'Start Date' %>
+  <%= f.input :end_date, label: 'End Date' %>
+  <%= f.button :submit, 'Create Report' %>
+<% end %>

@@ -17,22 +17,23 @@ ActiveRecord::Schema.define(version: 20140411011049) do
   enable_extension "plpgsql"
 
   create_table "encounters", force: true do |t|
-    t.string  "patient_name",       null: false
-    t.string  "insurance_provider", null: false
-    t.text    "notes"
-    t.integer "procedure_id",       null: false
-    t.integer "user_id",            null: false
+    t.string   "patient_name",       null: false
+    t.string   "insurance_provider", null: false
+    t.text     "notes"
+    t.integer  "procedure_id",       null: false
+    t.integer  "user_id",            null: false
+    t.float    "physician_fee"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "encounters", ["procedure_id"], name: "index_encounters_on_procedure_id", using: :btree
   add_index "encounters", ["user_id"], name: "index_encounters_on_user_id", using: :btree
 
   create_table "procedures", force: true do |t|
-    t.string   "code",        null: false
-    t.string   "description", null: false
-    t.float    "work_rvu",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "code",        null: false
+    t.string "description", null: false
+    t.float  "work_rvu",    null: false
   end
 
   create_table "users", force: true do |t|

@@ -5,7 +5,6 @@ class CreateProcedure < ActiveRecord::Migration
       t.string :description, null: false
       t.float :work_rvu, null: false
 
-      t.timestamps
     end
   end
 end
