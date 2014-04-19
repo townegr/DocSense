@@ -10,7 +10,7 @@ class Report
 
   def encounters
     @encounters = Encounter.where(created_at: start_date..end_date)
-    # boundary case => test for this
+    # boundary case => test for this (start_date == end_date)
     # @encounters = Encounter.where(created_at: start_date <=> end_date)
     # @encounters = Encounter.where(user: current_user).where(created_at: start_date..end_date)
   end

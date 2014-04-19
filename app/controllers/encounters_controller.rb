@@ -16,6 +16,7 @@ class EncountersController < ApplicationController
 
   def create
     @encounter = Encounter.new(encounter_params)
+    # @encounter.includes([:user, :procedure]).where(user: current_user)
     @encounter.user_id = current_user.id
     @encounter.set_physician_fee
 
