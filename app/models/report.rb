@@ -9,6 +9,9 @@ class Report
   end
 
   def encounters
-    @encounters = Encounter.where(created_at: DateTime(start_date).beginning_of_day..DateTime(end_date).end_of_day)
+    @encounters = Encounter.where(created_at: start_date..end_date)
+    # boundary case => test for this
+    # @encounters = Encounter.where(created_at: start_date <=> end_date)
+    # @encounters = Encounter.where(user: current_user).where(created_at: start_date..end_date)
   end
 end

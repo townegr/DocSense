@@ -22,7 +22,7 @@ class ProceduresController < ApplicationController
     @procedure = Procedure.find(params[:id])
   end
 
-  protected
+  private
   def procedure_params
     params.require(:procedure).permit(:description, :code, :work_rvu)
   end

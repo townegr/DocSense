@@ -11,7 +11,6 @@ class EncountersController < ApplicationController
       # @encounters = report.encounters
     # else
       @encounters = Encounter.where(user: current_user)
-      # @encounters = Encounter.where(user: current_user)
     # end
   end
 
@@ -28,7 +27,6 @@ class EncountersController < ApplicationController
   end
 
   def show
-    binding.pry
     @encounter = Encounter.find(params[:id])
   end
 

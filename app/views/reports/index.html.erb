@@ -1,5 +1,7 @@
 <ul>
-  <% @report.encounters.each do |encounter| %>
+
+  <% @report.encounters.where(user: current_user).each do |encounter| %>
+
     <li><%= encounter.physician_fee %></li>
   <% end %>
 </ul>

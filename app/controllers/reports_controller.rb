@@ -1,4 +1,9 @@
 class ReportsController < ApplicationController
+
+  # def index
+  #   @encounters = Report.encounters.where(user: current_user)
+  # end
+
   def new
     @report = Report.new
   end
@@ -6,7 +11,6 @@ class ReportsController < ApplicationController
   def create
     start_date = report_params[:start_date]
     end_date = report_params[:end_date]
-
     @report = Report.new(start_date, end_date)
 
     render :index
@@ -14,7 +18,7 @@ class ReportsController < ApplicationController
 
   def search
     @report = Report.new(report_params)
-    @encounters = @report.set_encounter_report
+    @reports = @report.set_encounter_report
   end
 
   private
