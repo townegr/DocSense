@@ -1,5 +1,9 @@
+<br>
 <div>
-<% @encounters.each do |encounter| %>
+  <%= button_to 'Create New', new_encounter_path, method: :get %>
+</div>
+<br>
+<div>
   <table>
     <thead>
       <tr>
@@ -11,22 +15,25 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><%= encounter.patient_name %></td>
-        <td><%= encounter.procedure.description %></td>
-        <td><%= encounter.procedure.code %></td>
-        <td><%= encounter.procedure.work_rvu %></td>
-        <td>$<%= encounter.set_physician_fee %></td>
-      </tr>
+      <% @encounters.each do |encounter| %>
+        <tr>
+          <td><%= link_to encounter.patient_name, encounter, method: :get %></td>
+          <td><%= encounter.procedure.description %></td>
+          <td><%= encounter.procedure.code %></td>
+          <td><%= encounter.procedure.work_rvu %></td>
+          <td>$<%= encounter.set_physician_fee %></td>
+        </tr>
+      <% end %>
+        <tr>
+          <th>Total</th>
+          <td colspan="2"></td>
+          <td>total wrvu</td>
+          <td>total fees</td>
+        </tr>
     </tbody>
   </table>
-<%= button_to 'More Details', encounter, method: :get %>
-<%= button_to encounter.created_at, encounter, method: :get %>
-<% end %>
 </div>
 
-<div>
-  <%= button_to 'Create New', new_encounter_path %>
-</div>
+
 
 <div id='calendar'></div>
