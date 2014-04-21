@@ -1,6 +1,9 @@
 <br>
 <div>
   <%= button_to 'Create New', new_encounter_path, method: :get %>
+  <% @encounters.each do |encounter| %>
+  <%= button_to encounter.group_by_day(:created_at), encounter, method: :get %>
+  <% end %>
 </div>
 <br>
 <div>
@@ -33,7 +36,5 @@
     </tbody>
   </table>
 </div>
-
-
 
 <div id='calendar'></div>
