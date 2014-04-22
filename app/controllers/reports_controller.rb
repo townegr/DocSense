@@ -5,13 +5,13 @@ class ReportsController < ApplicationController
   # end
 
   def new
-    @report = Report.new
+    @report = Report.new(current_user)
   end
 
   def create
     start_date = report_params[:start_date]
     end_date = report_params[:end_date]
-    @report = Report.new(start_date, end_date)
+    @report = Report.new(current_user, start_date, end_date)
 
     render :index
   end

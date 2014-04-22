@@ -10,7 +10,13 @@ class EncountersController < ApplicationController
       # report = Report.new(pass in the params)
       # @encounters = report.encounters
     # else
-      @encounters = Encounter.where(user: current_user)
+      @grouped_encounters = current_user.encounters.group_by_day(:created_at).count
+      if params[:date]
+        date = Date.parse(params[:date])
+        @encounters = current_user.encounters.where(created_at: date.beginning_of_day..date.end_of_day)
+      else
+        @encounters = current_user.encounters
+      end
     # end
   end
 

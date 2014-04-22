@@ -1,8 +1,8 @@
 <br>
 <div>
   <%= button_to 'Create New', new_encounter_path, method: :get %>
-  <% @encounters.each do |encounter| %>
-  <%= button_to encounter.created_at, encounter, method: :get %>
+  <% @grouped_encounters.each do |encounter| %>
+  <%= link_to encounter.first, encounters_path(date: encounter.first), method: :get, class: 'button tiny' %>
   <% end %>
 </div>
 <br>
