@@ -1,5 +1,6 @@
 class EncountersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def new
     @encounter = Encounter.new
@@ -26,18 +27,29 @@ class EncountersController < ApplicationController
     @encounter.user_id = current_user.id
     @encounter.set_physician_fee
 
-    if @encounter.save
-      redirect_to encounters_url, notice: 'Encounter added to schedule'
-    else
-      render 'new'
+    respond_to do |format|
+      if @encounter.save
+        format.html { redirect_to @encounter, notice: 'Encounter was successfully created' }
+        format.json { render action: 'show', status: :created, location: @encounter }
+        #redirect_to encounters_url, notice: 'Encounter added to schedule'
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @encounter.errors, status: :unprocessable_entity }
+        #render 'new'
+      end
     end
   end
 
   def show
-    @encounter = Encounter.find(params[:id])
+    @encounter = Encounter.find(params[:date])
   end
 
-  protected
+  private
+
+  def set_event
+    @encounter = Encounter.find(params[:date])
+  end
+
   def encounter_params
     params.require(:encounter).permit(:patient_name, :insurance_provider, :notes, :procedure_id).merge(user: current_user)
   end

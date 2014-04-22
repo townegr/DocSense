@@ -61,6 +61,8 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     fullcalendar-rails (1.6.4.0)
+    fullcalendar_engine (1.0.5)
+      rails (>= 4.0.0)
     groupdate (2.1.0)
       activerecord (>= 3.0.0)
     hike (1.2.3)
@@ -184,6 +186,7 @@ DEPENDENCIES
   factory_girl_rails
   foundation-rails
   fullcalendar-rails
+  fullcalendar_engine
   groupdate
   jbuilder (~> 1.2)
   jquery-rails

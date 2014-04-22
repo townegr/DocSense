@@ -31,6 +31,7 @@ gem 'jquery-ui-rails'
 gem 'fullcalendar-rails'
 gem 'pickadate-rails'
 gem 'groupdate'
+gem 'fullcalendar_engine'
 
 group :development do
   gem 'quiet_assets'
