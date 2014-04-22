@@ -11,7 +11,7 @@ class EncountersController < ApplicationController
       # @encounters = report.encounters
     # else
 
-      @encounters = current_user.encounters.count(order: 'DATE(created_at)', group: ['DATE(created_at)'])
+      @encounters = current_user.encounters.group_by_day(:created_at).count
     # end
   end
 

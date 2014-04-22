@@ -2,8 +2,8 @@
 <div>
   <%= button_to 'Create New', new_encounter_path, method: :get %>
   <% @encounters.each do |encounter| %>
-  <% binding.pry %>
-  <%= button_to encounter.first.readable_inspect, encounter, method: :get %>
+  <%# binding.pry %>
+  <%= button_to encounter.first, encounter, method: :get %>
   <% end %>
 </div>
 <br>
