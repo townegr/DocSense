@@ -2,7 +2,8 @@
 <div>
   <%= button_to 'Create New', new_encounter_path, method: :get %>
   <% @encounters.each do |encounter| %>
-  <%= button_to encounter.group_by_day(:created_at), encounter, method: :get %>
+  <% binding.pry %>
+  <%= button_to encounter.first, encounter, method: :get %>
   <% end %>
 </div>
 <br>

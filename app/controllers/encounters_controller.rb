@@ -10,7 +10,7 @@ class EncountersController < ApplicationController
       # report = Report.new(pass in the params)
       # @encounters = report.encounters
     # else
-      @encounters = Encounter.where(user: current_user)
+      @encounters = Encounter.where(user: current_user).count(order: 'DATE(created_at)', group: ['DATE(created_at)'])
     # end
   end
 
