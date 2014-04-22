@@ -10,4 +10,12 @@ class Encounter < ActiveRecord::Base
   def set_physician_fee
     self.physician_fee = user.dollar_per_rvu * procedure.work_rvu
   end
+
+  def get_total_rvu
+    self.joins(:procedure).sum(:work_rvu)
+  end
+
+  # def get_total_fee
+  #   self.sum(:physician_fee)
+  # end
 end

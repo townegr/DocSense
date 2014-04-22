@@ -25,14 +25,17 @@
           <td><%= encounter.procedure.code %></td>
           <td><%= encounter.procedure.work_rvu %></td>
           <td>$<%= encounter.set_physician_fee %></td>
+
         </tr>
-      <% end %>
+        <% end %>
         <tr>
           <th>Total</th>
           <td colspan="2"></td>
-          <td>total wrvu</td>
-          <td>total fees</td>
+
+          <td><%= @encounters.joins(:procedure).sum(:work_rvu) %></td>
+          <td><%= @encounters.sum(:physician_fee) %></td>
         </tr>
+
     </tbody>
   </table>
 </div>
