@@ -4,7 +4,7 @@ class Report
   attr_reader :start_date, :end_date
 
   def initialize(user, start_date = nil, end_date = nil)
-    @user = current_user
+    @user = user
     @start_date = start_date ? Date.parse(start_date) : nil
     @end_date = start_date ? Date.parse(end_date) : nil
   end
