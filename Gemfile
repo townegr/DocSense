@@ -30,6 +30,7 @@ gem 'devise'
 gem 'jquery-ui-rails'
 gem 'fullcalendar-rails'
 gem 'pickadate-rails'
+gem 'groupdate'
 
 group :development do
   gem 'quiet_assets'
