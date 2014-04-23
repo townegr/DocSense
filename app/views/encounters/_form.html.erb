@@ -1,7 +1,31 @@
-<%= simple_form_for @encounter do |f| %>
+<%= simple_form_for @encounter, method: :post, remote: true do |f| %>
   <%= f.input :patient_name, label: 'Patient Name' %>
   <%= f.input :insurance_provider, label: 'Insurance Provider' %>
   <%= f.association :procedure, label_method: :description, label: 'Procedure Description' %>
   <%= f.input :notes, label: 'Notes' %>
   <%= f.button :submit, 'Add Encounter' %>
 <% end %>
+
+<div id='encounters'>
+  <table>
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Procedure Description</th>
+        <th>HCPCS Code</th>
+        <th>Work RVU</th>
+        <th>Physician Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @encounters %>
+      <tr>
+        <th>Total</th>
+        <td colspan="2"></td>
+        <td><%= @encounters.joins(:procedure).sum(:work_rvu) %></td>
+        <td><%= @encounters.sum(:physician_fee) %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

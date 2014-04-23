@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to encounter.patient_name, encounter, method: :get %></td>
+  <td><%= encounter.procedure.description %></td>
+  <td><%= encounter.procedure.code %></td>
+  <td><%= encounter.procedure.work_rvu %></td>
+  <td>$<%= encounter.set_physician_fee %></td>
+  <td><%= button_to 'Delete', encounter, method: :delete, remote: true %></td>
+</tr>
+
+

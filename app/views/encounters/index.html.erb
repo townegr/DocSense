@@ -5,36 +5,5 @@
   <%= link_to encounter.first, encounters_path(date: encounter.first), method: :get, class: 'button tiny' %>
   <% end %>
 </div>
-<br>
-<div>
-  <table>
-    <thead>
-      <tr>
-        <th>Patient Name</th>
-        <th>Procedure Description</th>
-        <th>HCPCS Code</th>
-        <th>Work RVU</th>
-        <th>Physician Fee</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @encounters.each do |encounter| %>
-        <tr>
-          <td><%= link_to encounter.patient_name, encounter, method: :get %></td>
-          <td><%= encounter.procedure.description %></td>
-          <td><%= encounter.procedure.code %></td>
-          <td><%= encounter.procedure.work_rvu %></td>
-          <td>$<%= encounter.set_physician_fee %></td>
-        </tr>
-        <% end %>
-        <tr>
-          <th>Total</th>
-          <td colspan="2"></td>
-          <td><%= @encounters.joins(:procedure).sum(:work_rvu) %></td>
-          <td><%= @encounters.sum(:physician_fee) %></td>
-        </tr>
-    </tbody>
-  </table>
-</div>
 
 <div id='calendar'></div>
