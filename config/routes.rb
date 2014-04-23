@@ -6,6 +6,7 @@ RainMaker::Application.routes.draw do
 
 
   get '/report' => 'reports#report'
+  get '/schedule' => 'encounters#schedule'
 
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
