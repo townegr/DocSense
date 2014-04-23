@@ -1,5 +1,14 @@
-<ul>
-  <% @report.encounters.each do |encounter| %>
-    <li><%= encounter.physician_fee %></li>
-  <% end %>
-</ul>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <th>Total Work RVUs</th>
+        <td><%= @report.encounters.joins(:procedure).sum(:work_rvu) %></td>
+      </tr>
+      <tr>
+        <th>Total Fees</th>
+        <td>$<%= @report.encounters.sum(:physician_fee) %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
