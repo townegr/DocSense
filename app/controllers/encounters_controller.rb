@@ -46,12 +46,12 @@ class EncountersController < ApplicationController
   end
 
   def schedule
-if params[:date]
-        date = Date.parse(params[:date])
-        @encounters = current_user.encounters.where(created_at: date.beginning_of_day..date.end_of_day)
-      else
-        @encounters = current_user.encounters
-      end
+    if params[:date]
+      date = Date.parse(params[:date])
+      @encounters = current_user.encounters.includes(:user, :procedure).where(created_at: date.beginning_of_day..date.end_of_day)
+    else
+      @encounters = current_user.encounters.includes(:user, :procedure)
+    end
   end
 
   protected
