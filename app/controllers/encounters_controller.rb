@@ -3,16 +3,20 @@ class EncountersController < ApplicationController
 
   def new
     @encounter = Encounter.new
-    @encounters = current_user.encounters
+
+    #previous input disregarding n+1
+    # @encounters = current_user.encounters
+
+    #optimize with eager loading associations
+    @encounters = current_user.encounters.includes(:user, :procedure)
   end
 
   def index
-    # if there are the start_date and end_date params
-      # report = Report.new(pass in the params)
-      # @encounters = report.encounters
-    # else
-      @encounter = Encounter.new
-      @grouped_encounters = current_user.encounters.group_by_day(:created_at).count
+      #previous input disregarding n+1
+      # @grouped_encounters = current_user.encounters.group_by_day(:created_at).count
+
+      #querying via eager loading
+      @grouped_encounters = current_user.encounters.includes(:user, :procedure).group_by_day(:created_at).count
 
   end
 
