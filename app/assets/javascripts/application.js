@@ -29,3 +29,5 @@ $(document).ready(function() {
     $('.datepicker').pickadate();
 
 });
+
+$(function(){ $(document).foundation(); });

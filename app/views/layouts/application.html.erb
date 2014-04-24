@@ -9,19 +9,11 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+  </head>
 
   <body>
 
-    <%= render 'layouts/messages' %>
-    <%= render 'layouts/navbar' %>
-
-    <div class="row">
-      <div class="small-12 columns">
-        <%= yield %>
-      </div>
-    </div>
-
+    <%= yield %>
     <%= javascript_include_tag "application" %>
-    <%= yield :extra_footer %>
   </body>
 </html>
