@@ -1,5 +1,21 @@
-<ul>
-  <% @report.encounters.each do |encounter| %>
-    <li><%= encounter.physician_fee %></li>
-  <% end %>
-</ul>
+<br>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <th>Total Work RVUs</th>
+        <td><%= @report.encounters.joins(:procedure).sum(:work_rvu) %></td>
+      </tr>
+      <tr>
+        <th>Total Fees</th>
+        <td>$<%= @report.encounters.sum(:physician_fee) %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+<%= line_chart @report.encounters.joins(:procedure).group_by_day(:created_at).sum(:work_rvu) %>
+<%= pie_chart @report.encounters.joins(:procedure).group(:description).sum(:work_rvu) %>
+<%= column_chart @report.encounters.joins(:procedure).group(:code).sum(:work_rvu) %>
