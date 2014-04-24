@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RainMaker::Application.config.secret_key_base = '22c3519ada950e65f7447a0ca88e5b90ee01c9006e45d2d2a7e6ee9f7478c20b60f0902202a40a71d6f98aa1044fa3f1d502e26eb980e56750d23d40e4b56a46'
+RainMaker::Application.config.secret_key_base = ENV['secret_token']
