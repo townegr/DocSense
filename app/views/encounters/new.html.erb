@@ -6,7 +6,7 @@
   <script>
   $(function(){
       $('.encounters').on('ajax:complete', function(event, response){
-          $(event.target).parent().fadeOut();
+          $(event.target).parent();
         });
       });
   </script>
