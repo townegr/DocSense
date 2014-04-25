@@ -23,7 +23,13 @@ $(document).ready(function() {
     // page is now ready, initialize the calendar...
 
     $('#calendar').fullCalendar({
-        events: '/encounters/new.json'
+        events: '/encounters/new.json',
+        dayClick: function(day) {
+          window.location = '/schedule?date=' + day;
+        },
+        eventClick: function(event) {
+          window.open('/schedule?date=' + event.start)
+        }
     })
     $(document).foundation();
     $('.datepicker').pickadate();
