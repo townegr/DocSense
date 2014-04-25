@@ -12,15 +12,18 @@
         <%= f.input :last_name, label: 'Last Name', required: true %>
       </div>
       <div class="small-12 medium-4 columns">
-        <%= f.input :email, label: 'Email Address', required: true, autofocus: true %>
+        <%= f.input :username, label: 'Username', required: true, autofocus: true %>
       </div>
     </div>
 
     <div class="row">
-      <div class="small-12 medium-6 columns">
+      <div class="small-12 medium-4 columns">
+        <%= f.input :email, label: 'Email Address', required: true %>
+      </div>
+      <div class="small-12 medium-4 columns">
         <%= f.input :dollar_per_rvu, label: 'RVU Dollar Amount', required: true %>
       </div>
-      <div class="small-12 medium-6 columns">
+      <div class="small-12 medium-4 columns">
         <%= f.input :job_title, label: 'Job Title', collection: ['Medical Provider', 'Administrative Staff'] %>
       </div>
     </div>

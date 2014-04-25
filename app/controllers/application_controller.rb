@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
       :first_name,
       :last_name,
       :email,
+      :username,
       :dollar_per_rvu,
       :job_title,
       :password,
