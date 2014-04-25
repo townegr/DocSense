@@ -1,9 +1,23 @@
 <%= simple_form_for @encounter, method: :post, remote: true do |f| %>
-  <%= f.input :patient_name, label: 'Patient Name' %>
-  <%= f.input :insurance_provider, label: 'Insurance Provider' %>
-  <%= f.association :procedure, label_method: :description, label: 'Procedure Description' %>
-  <%= f.input :notes, label: 'Notes' %>
-  <%= f.button :submit, 'Add Encounter' %>
+<div class="row collapse">
+  <div class="small-3 columns">
+    <%= f.label 'Patient Name', class: "right inline", title: "Name of your patient", data: {tooltip: true} %>
+  </div>
+  <div class="small-9 columns">
+    <%= f.text_field :patient_name %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-9 columns">
+    <%= f.association :procedure, label_method: :description, label: 'Procedure Description' %>
+  </div>
+  <div class="small-3 columns">
+    <%= f.input :notes, label: 'Notes', class: "right inline" %>
+  </div>
+  <div class="small-9 small-offset-3 columns">
+    <%= f.button :submit, 'Add Encounter' %>
+  </div>
+</div>
 <% end %>
 
 <div id='encounters'>
