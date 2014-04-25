@@ -8,6 +8,7 @@ class EncountersController < ApplicationController
     # @encounters = current_user.encounters
 
     #optimize with eager loading associations
+
     @encounters = current_user.encounters.includes(:user, :procedure)
   end
 
