@@ -1,0 +1,20 @@
+body {
+  background-color: #e1e7f4;
+}
+
+/*.users-index {
+  background-image:url(stethoscope.jpg);
+  background-repeat:no-repeat;
+  background-position: center center;
+}*/
+
+.top-bar-section ul.right:not(.has-form) a:not(.button) {
+  background-color: #FF9900;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+padding: 0 15px;
+line-height: 45px;
+color: #fff;
+background: #008CBA;
+}

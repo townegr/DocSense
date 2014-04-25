@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+
     <%= csrf_meta_tags %>
 
   <body>
@@ -16,7 +17,7 @@
     <%= render 'layouts/navbar' %>
 
     <div class="row">
-      <div class="small-12 columns">
+      <div class="large-12 columns">
         <%= yield %>
       </div>
     </div>

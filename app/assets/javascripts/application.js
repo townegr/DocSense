@@ -29,3 +29,8 @@ $(document).ready(function() {
     $('.datepicker').pickadate();
 
 });
+
+//=for twentytwenty slider
+$(window).load(function(){
+  $("#container1").twentytwenty();
+});

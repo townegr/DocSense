@@ -1,15 +1,13 @@
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
-      <h1><a href="/">Home</a></h1>
-    </li>
-    <li class="toggle-topbar menu-icon">
-      <h1><a href="#">Menu</a></h1>
+      <h1><a href="/">DocSense</a></h1>
     </li>
   </ul>
 
   <section class="top-bar-section">
     <ul class="left">
+      <li class="divider"></li>
       <li class="has-dropdown">
         <a href="/encounters">Schedule</a>
         <ul class="dropdown">
@@ -18,6 +16,7 @@
           <li><a href="/encounters/new">Appointment</a></li>
         </ul>
       </li>
+      <li class="divider"></li>
       <li class="has-dropdown">
         <a href="/encounters">Clinical</a>
         <ul class="dropdown">
@@ -26,6 +25,7 @@
           <li><a href="/encounters/new">Audit Log</a></li>
         </ul>
       </li>
+      <li class="divider"></li>
       <li class="has-dropdown">
         <a href="/encounters">Patients</a>
         <ul class="dropdown">
@@ -34,6 +34,7 @@
           <li><a href="/encounters/new">Analytics</a></li>
         </ul>
       </li>
+      <li class="divider"></li>
       <li class="has-dropdown">
         <a href="/reports">Reports</a>
         <ul class="dropdown">
@@ -42,9 +43,12 @@
           <li><a href="/encounters/new">Advanced Report</a></li>
         </ul>
       </li>
+      <li class="divider"></li>
     </ul>
     <ul class="right">
       <% if user_signed_in? %>
+        <li class="account">
+        <li class="divider"></li>
         <li class="has-dropdown">
           <a href="/encounters">Account</a>
           <ul class="dropdown">
@@ -55,6 +59,7 @@
             <li><%= link_to 'Log In', new_user_session_url %></li>
             <li><%= link_to 'Sign Up', new_user_registration_url %></li>
           </ul>
+        </li>
         </li>
       <% end %>
     </ul>
