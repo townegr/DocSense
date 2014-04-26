@@ -1,7 +1,9 @@
 RainMaker::Application.routes.draw do
   devise_for :users
   resources :procedures
-  resources :encounters
+  resources :encounters do
+    get 'delete'
+  end
   resources :reports, only: [:new, :create]
 
 

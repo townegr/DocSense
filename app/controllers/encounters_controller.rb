@@ -35,6 +35,7 @@ class EncountersController < ApplicationController
   end
 
   def destroy
+    @encounters = Encounter.all
     @encounter = Encounter.find(params[:id])
     @encounter.destroy
     respond_to do |format|
