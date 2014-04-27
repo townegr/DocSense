@@ -1,7 +1,20 @@
-<h1>Create Report</h1>
-
-<%= simple_form_for :report, url: '/reports', method: 'post' do |f| %>
-  <%= f.input :start_date, label: 'Start Date', input_html: {class: 'datepicker'} %>
-  <%= f.input :end_date, label: 'End Date', input_html: {class: 'datepicker'} %>
-  <%= f.button :submit, 'Create Report' %>
-<% end %>
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Create Report</h1>
+    <%= simple_form_for :report, url: '/reports', method: 'post' do |f| %>
+    <div class="row">
+      <div class="small-6 columns">
+        <%= f.input :start_date, label: false, placeholder: 'Start Date', input_html: {class: 'datepicker'} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-6 columns">
+        <%= f.input :end_date, label: false, placeholder: 'End Date', input_html: {class: 'datepicker'} %>
+      </div>
+    </div>
+    <div>
+      <%= f.button :submit, 'Create Report', class: 'button radius' %>
+    </div>
+    <% end %>
+  </div>
+</div>

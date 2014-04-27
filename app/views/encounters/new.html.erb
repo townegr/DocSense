@@ -1,3 +1,5 @@
+<div class="row">
+  <div class="large-12 columns"
 <h1>Add new encounter</h1>
 
 <%= render 'form' %>
@@ -6,10 +8,11 @@
   <script>
   $(function(){
       $('.encounters').on('ajax:complete', function(event, response){
-          $(event.target).parent().fadeOut();
+          $(event.target).parent();
         });
       });
   </script>
 <% end %>
-
+</div>
+</div>
 

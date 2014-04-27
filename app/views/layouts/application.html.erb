@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+
     <%= csrf_meta_tags %>
 
   <body>
@@ -15,12 +16,16 @@
     <%= render 'layouts/messages' %>
     <%= render 'layouts/navbar' %>
 
-    <div class="row">
-      <div class="small-12 columns">
-        <%= yield %>
-      </div>
-    </div>
 
+
+
+
+ <!--    <div class="row">
+      <div class="large-12 columns"> -->
+        <%= yield %>
+ <!--      </div>
+    </div>
+ -->
     <%= javascript_include_tag "application" %>
     <%= yield :extra_footer %>
   </body>

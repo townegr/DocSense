@@ -1,9 +1,10 @@
 <%= simple_form_for @encounter, method: :post, remote: true do |f| %>
-  <%= f.input :patient_name, label: 'Patient Name' %>
-  <%= f.input :insurance_provider, label: 'Insurance Provider' %>
+  <%= f.text_field :patient_name, placeholder: 'Patient Name' %>
+  <%= f.text_field :insurance_provider, placeholder: 'Insurance Provider' %>
+  <%#= f.text_field :primary_md, placeholder: 'Primary MD' %>
+  <%= f.text_field :notes, placeholder: 'Notes' %>
   <%= f.association :procedure, label_method: :description, label: 'Procedure Description' %>
-  <%= f.input :notes, label: 'Notes' %>
-  <%= f.button :submit, 'Add Encounter' %>
+  <%= f.button :submit, 'Add Encounter', class: 'button radius' %>
 <% end %>
 
 <div id='encounters'>

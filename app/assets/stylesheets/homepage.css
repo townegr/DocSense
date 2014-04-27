@@ -1,0 +1,52 @@
+.unique {
+  background: url('/assets/healthtech.jpg') no-repeat center center fixed;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.banner-footer li h3 {
+
+  color: #808080;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 5%;
+}
+
+.banner {
+  position: absolute;
+  top: 83%;
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+}
+
+.healthtech-background {
+
+/*  background-image: url('/assets/healthtech.jpg');
+
+*/  height: 80%;
+  width: 100%;
+  position: fixed;
+  /*background-position: 0 Y;*/
+  padding: 0px;
+/*  background-color: #41506e;*/
+/*  background-repeat: no-repeat;
+*/  /*background-size: 100%100% auto;*/
+  /*width: 100%;*/
+}
+
+.banner-footer {
+  background-color: #bceff6;
+}
+
+p {
+
+  color: #808080;
+  text-align: center;
+  font-size: 17px;
+  /*padding-top: 1px;
+  padding-left: 35px;
+  padding-bottom: 5%;*/
+}
