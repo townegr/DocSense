@@ -1,6 +1,7 @@
 body {
-  background-color: #e1e7f4;
+  background-color: #f3f5f4;
 }
+
 
 /*.users-index {
   background-image:url(stethoscope.jpg);
@@ -9,12 +10,39 @@ body {
 }*/
 
 .top-bar-section ul.right:not(.has-form) a:not(.button) {
-  background-color: #FF9900;
+  background-color: #ff7f00;
 }
+
+a.small.button.radius {
+  background-color: #ff7f00;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+ul.right {
+  padding: 0 7px;
+}
+
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
 padding: 0 15px;
 line-height: 45px;
 color: #fff;
 background: #008CBA;
+}
+
+.header-homepage {
+  height: 10px;
+}
+
+li.has-dropdown.not-click {
+  background-color: #808080;
+}
+
+ul.right {
+  background-color: #808080;
+}
+
+nav.top-bar {
+  background-color: #808080;
 }
