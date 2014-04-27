@@ -2,13 +2,28 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :login, required: false %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign In", class: 'button radius' %>
+    <div class="large-12 columns">
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.input :login, required: false %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.input :password, required: false %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.button :submit, "Sign In", class: 'button radius' %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
 
