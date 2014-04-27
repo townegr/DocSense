@@ -36,7 +36,3 @@ $(document).ready(function() {
 
 });
 
-//=for twentytwenty slider
-$(window).load(function(){
-  $("#container1").twentytwenty();
-});
