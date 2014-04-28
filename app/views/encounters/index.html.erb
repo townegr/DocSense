@@ -1,17 +1,14 @@
 <div class="row">
   <div class="large-12 columns">
-<br>
-<div>
-  <%= button_to 'Create New', new_encounter_path, method: :get %>
-</div>
+  <br>
+  <div>
+    <%= button_to 'Create New', new_encounter_path, method: :get %>
+  </div>
 
-  <% @grouped_encounters.each do |encounter| %>
+<!--   <% @grouped_encounters.each do |encounter| %>
+    <%= link_to encounter.first, schedule_path(date: encounter.first), method: :get, class: 'group button tiny' %>
+  <% end %> -->
 
-  <!-- <div> -->
-      <%= link_to encounter.first, schedule_path(date: encounter.first), method: :get, class: 'group button tiny' %>
-    <!-- </div> -->
-  <% end %>
-
-<div id='calendar'></div>
-</div>
+    <div id='calendar'></div>
+  </div>
 </div>

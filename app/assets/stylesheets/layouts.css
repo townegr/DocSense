@@ -2,27 +2,17 @@ body {
   background-color: #f3f5f4;
 }
 
-
-/*.users-index {
-  background-image:url(stethoscope.jpg);
-  background-repeat:no-repeat;
-  background-position: center center;
-}*/
-
 .top-bar-section ul.right:not(.has-form) a:not(.button) {
   background-color: #ff7f00;
 }
 
 a.small.button.radius {
   background-color: #ff7f00;
-/*  padding-right: 15px;
-  padding-left: 15px;*/
 }
 
 ul.right {
   padding: 0 7px;
 }
-
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
 padding: 0 15px;
@@ -54,20 +44,7 @@ li.left {
 
 #calendar {
   float: right;
-  width: 600px;
-}
-
-a.group.button.tiny {
-  float: left;
-  margin: 25px 0px 25px;
-  display: block;
-
-
-height: 20px;
-font-size: 8pt;
-font-weight: bold;
-color: white;
-
+  width: 750px;
 }
 
 h2 {
@@ -78,4 +55,7 @@ h2 {
 
 .report {
   margin: 10px 0 10px;
+  text-align: center;
 }
+
+

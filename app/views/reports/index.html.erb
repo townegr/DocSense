@@ -1,23 +1,58 @@
 <div class="row">
   <div class="large-12 columns">
     <div>
+      <br>
+      <h2 style='text-align: center'>Dr. <%= current_user.full_name %>'s analytical report between <%= @report.start_date.strftime('%B %e, %Y') %> and <%= @report.end_date.strftime('%B %e, %Y') %></h2>
       <table class="report">
-        <tbody>
+        <thead>
           <tr>
-            <th>Total Work RVUs</th>
-            <td><%= @report.encounters.joins(:procedure).sum(:work_rvu) %></td>
+            <td># Patients</th>
+            <td>Avg # patients/day</td>
+            <td>Avg $/patient</td>
+            <td>Highest Grossing Procedure</td>
+            <td>Lowest Grossing Procedure</td>
+            <td>Total Work RVUs</td>
+            <td>Total Fees</td>
           </tr>
+        </thead>
+        </tbody>
           <tr>
-            <th>Total Fees</th>
-            <td>$<%= @report.encounters.sum(:physician_fee) %></td>
+            <td>
+              <%= @report.encounters.count %>
+            </td>
+            <td>
+              <%= ((@report.encounters.count.to_f) / ((@report.end_date - @report.start_date).to_f)).round(1) %>
+            </td>
+            <td>
+              $<%= ((@report.encounters.sum(:physician_fee).to_f) / (@report.encounters.count.to_f)).round(2) %>
+            </td>
+            <td>
+              <% highest_encounter = @report.encounters.order('physician_fee desc').first %>
+              <%= highest_encounter.procedure.description %></td>
+            <td>
+              <% lowest_encounter = @report.encounters.order('physician_fee desc').last %>
+              <%= lowest_encounter.procedure.description %>
+            </td>
+            <td>
+              <%= @report.encounters.joins(:procedure).sum(:work_rvu) %>
+            </td>
+            <td>
+              $<%= @report.encounters.sum(:physician_fee) %>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-
+<p>Work RVUs accumulated between <%= @report.start_date.strftime('%B %e, %Y') %> and <%= @report.end_date.strftime('%B %e, %Y') %></p>
 <%= line_chart @report.encounters.joins(:procedure).group_by_day(:created_at).sum(:work_rvu) %>
-<%= pie_chart @report.encounters.joins(:procedure).group(:description).sum(:work_rvu) %>
+<br>
+<p>Frequency of each procedure between <%= @report.start_date.strftime('%B %e, %Y') %> and <%= @report.end_date.strftime('%B %e, %Y') %></p>
 <%= column_chart @report.encounters.joins(:procedure).group(:code).sum(:work_rvu) %>
+
+
+
   </div>
 </div>
+
+

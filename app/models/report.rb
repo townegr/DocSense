@@ -12,4 +12,11 @@ class Report
   def encounters
     @encounters = Encounter.where(created_at: start_date.beginning_of_day..end_date.end_of_day, user: @user)
   end
+
+  def highest_grossing_encounter
+
+  end
+
+  def lowest_grossing_procedure
+  end
 end
