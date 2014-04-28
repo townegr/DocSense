@@ -1,8 +1,11 @@
+<div class="row"
+  <div class="form-inputs">
+    <div class="large-12 columns">
+
 <h2>Welcome Back</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <div class="large-12 columns">
+
       <div class="row">
         <div class="small-6 columns">
           <%= f.input :login, required: false %>
@@ -23,8 +26,11 @@
           <%= f.button :submit, "Sign In", class: 'button radius' %>
         </div>
       </div>
-    </div>
-  </div>
+
 <% end %>
+</div>
+</div>
 
 <%= render "devise/shared/links" %>
+
+

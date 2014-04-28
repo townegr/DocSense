@@ -1,3 +1,6 @@
+<div class="row">
+  <div class="large-12 columns">
+
 <div class="fixed">
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
@@ -10,38 +13,37 @@
       <ul class="left">
         <li class="divider"></li>
         <li class="has-dropdown">
-          <a href="/encounters">Schedule</a>
+          <a href="">Schedule</a>
           <ul class="dropdown">
-            <li><a href="/encounters/new">Schedule</a></li>
-            <li><a href="/encounters/new">Calendar</a></li>
-            <li><a href="/encounters/new">Appointment</a></li>
+            <!-- <li><a href="/encounters/new">Schedule</a></li> -->
+            <li><a href="/encounters">Calendar</a></li>
+            <!-- <li><a href="/encounters/new">Appointment</a></li> -->
           </ul>
         </li>
         <li class="divider"></li>
         <li class="has-dropdown">
-          <a href="/encounters">Clinical</a>
+          <a href="">Clinical</a>
           <ul class="dropdown">
-            <li><a href="/encounters/new">Clinical Notes</a></li>
-            <li><a href="/encounters/new">CMS Rules</a></li>
-            <li><a href="/encounters/new">Audit Log</a></li>
+            <li><a href="/encounters/new">Patient List</a></li>
+            <!-- <li><a href="/encounters/new">CMS Rules</a></li>
+            <li><a href="/encounters/new">Audit Log</a></li> -->
           </ul>
         </li>
-        <li class="divider"></li>
+       <!--  <li class="divider"></li>
         <li class="has-dropdown">
           <a href="/encounters">Patients</a>
           <ul class="dropdown">
             <li><a href="/encounters/new">Patient</a></li>
-            <li><a href="/encounters/new">Patient List</a></li>
+
             <li><a href="/encounters/new">Analytics</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="divider"></li>
         <li class="has-dropdown">
-          <a href="/reports">Reports</a>
+          <a href="">Reports</a>
           <ul class="dropdown">
-            <li><a href="/encounters/new">Practice</a></li>
             <li><a href="/reports/new">Productivity Report</a></li>
-            <li><a href="/encounters/new">Advanced Report</a></li>
+            <li><a href="">Advanced Report</a></li>
           </ul>
         </li>
         <li class="divider"></li>
@@ -49,16 +51,19 @@
       <ul class="right">
         <% if user_signed_in? %>
           <li class="account">
-
-          <li class="has-dropdown">
-            <a href="/encounters" class="small orange button nice radius">Account</a>
-            <ul class="dropdown">
-              <li><%= link_to "Log Out", destroy_user_session_url, method: :delete %></li>
-              <li><a href="/encounters/new">Report Problem</a></li>
-              <li><a href="/encounters/new">Help</a></li>
+          <li>
+            <ul>
+              <li class="right">
+                <%= link_to "Log Out", destroy_user_session_url, method: :delete, class: "small orange button nice radius" %>
+              </li>
+            </ul>
         <% else %>
-              <li><%= link_to 'Log In', new_user_session_url %></li>
-              <li><%= link_to 'Sign Up', new_user_registration_url %></li>
+              <li class="left">
+                <%= link_to 'Log In', new_user_session_url, class: "small orange button nice radius" %>
+              </li>
+              <li>
+                <%= link_to 'Sign Up', new_user_registration_url, class: 'small right button radius' %>
+              </li>
             </ul>
           </li>
           </li>
@@ -66,4 +71,7 @@
       </ul>
     </section>
   </nav>
+</div>
+
+</div>
 </div>

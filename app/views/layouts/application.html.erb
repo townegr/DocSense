@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Medical analytics for your practice | DocSense" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -20,11 +20,9 @@
 
 
 
-    <div class="row">
-      <div class="large-12 columns">
+
         <%= yield %>
-      </div>
-    </div>
+
 
     <%= javascript_include_tag "application" %>
     <%= yield :extra_footer %>

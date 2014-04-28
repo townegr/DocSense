@@ -1,11 +1,30 @@
-<%= simple_form_for @encounter, method: :post, remote: true do |f| %>
-  <%= f.text_field :patient_name, placeholder: 'Patient Name' %>
-  <%= f.text_field :insurance_provider, placeholder: 'Insurance Provider' %>
+
+<div class="row">
+  <div class="large-12 columns">
+    <%= simple_form_for @encounter, method: :post, remote: true do |f| %>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <%= f.text_field :patient_name, placeholder: 'Patient Name' %>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <%= f.text_field :insurance_provider, placeholder: 'Insurance Provider' %>
+      </div>
+    </div>
   <%#= f.text_field :primary_md, placeholder: 'Primary MD' %>
-  <%= f.text_field :notes, placeholder: 'Notes' %>
-  <%= f.association :procedure, label_method: :description, label: 'Procedure Description' %>
-  <%= f.button :submit, 'Add Encounter', class: 'button radius' %>
-<% end %>
+    <div class="row">
+      <div class="small-12 medium-6 columns">
+        <%= f.text_field :notes, placeholder: 'Notes' %>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <%= f.association :procedure, label_method: :description, placeholder: 'Procedure Description' %>
+      </div>
+    </div>
+    <div>
+      <%= f.button :submit, 'Add Encounter', class: 'button radius' %>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 <div id='encounters'>
   <table>
