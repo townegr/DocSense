@@ -6,7 +6,7 @@ class CreateEncounters < ActiveRecord::Migration
       t.text :notes
       t.integer :procedure_id, null: false
       t.integer :user_id, null: false
-      t.decimal :physician_fee
+      t.decimal :physician_fee, precision: 10, scale: 2
 
       t.timestamps
     end
