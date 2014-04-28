@@ -3,7 +3,7 @@
     <div>
       <br>
       <h2 style='text-align: center'>Dr. <%= current_user.full_name %>'s analytical report between <%= @report.start_date.strftime('%B %e, %Y') %> and <%= @report.end_date.strftime('%B %e, %Y') %></h2>
-      <table class="report">
+      <table id="report">
         <thead>
           <tr>
             <td># Patients</th>
