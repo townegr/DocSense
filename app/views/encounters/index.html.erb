@@ -3,11 +3,13 @@
 <br>
 <div>
   <%= button_to 'Create New', new_encounter_path, method: :get %>
-  <% @grouped_encounters.each do |encounter| %>
-  <%= link_to encounter.first, schedule_path(date: encounter.first), method: :get, class: 'button tiny' %>
-  <% end %>
 </div>
-<br>
+
+  <% @grouped_encounters.each do |encounter| %>
+  <!-- <div> -->
+      <%= link_to encounter.first, schedule_path(date: encounter.first), method: :get, class: 'group button tiny' %>
+    <!-- </div> -->
+  <% end %>
 
 <div id='calendar'></div>
 </div>
