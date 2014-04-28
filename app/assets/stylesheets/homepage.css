@@ -9,16 +9,18 @@
 .banner-footer li h3 {
 
   color: #808080;
-  text-align: center;
-  padding-top: 25px;
-  padding-bottom: 5%;
+  text-align: left;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 70px;
 }
 
 .banner {
   position: absolute;
   top: 83%;
   overflow: hidden;
-  height: 200px;
+  height: 100px;
   width: 100%;
 }
 
@@ -30,7 +32,7 @@
   width: 100%;
   position: fixed;
   /*background-position: 0 Y;*/
-  padding: 0px;
+/*  padding: 0px;*/
 /*  background-color: #41506e;*/
 /*  background-repeat: no-repeat;
 */  /*background-size: 100%100% auto;*/
@@ -44,8 +46,9 @@
 p {
 
   color: #808080;
-  text-align: center;
-  font-size: 17px;
+  text-align: left;
+  font-size: 14px;
+  padding: 0 30px 0 70px;
   /*padding-top: 1px;
   padding-left: 35px;
   padding-bottom: 5%;*/
