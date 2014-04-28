@@ -69,3 +69,13 @@ font-weight: bold;
 color: white;
 
 }
+
+h2 {
+  padding: 10px 0 10px;
+  font-size: 18pt;
+  font-weight: normal;
+}
+
+.report {
+  margin: 10px 0 10px;
+}

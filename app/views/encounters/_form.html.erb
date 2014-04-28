@@ -16,7 +16,7 @@
         <%= f.text_field :notes, placeholder: 'Notes' %>
       </div>
       <div class="small-12 medium-6 columns">
-        <%= f.association :procedure, label_method: :description, placeholder: 'Procedure Description' %>
+        <%= f.association :procedure, label_method: :description, label: false, prompt: 'Procedure Description' %>
       </div>
     </div>
     <div>

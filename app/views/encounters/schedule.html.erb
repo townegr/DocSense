@@ -27,7 +27,7 @@
           <th>Total</th>
           <td colspan="2"></td>
           <td><%= @encounters.joins(:procedure).sum(:work_rvu) %></td>
-          <td><%= @encounters.sum(:physician_fee) %></td>
+          <td>$<%= @encounters.sum(:physician_fee) %></td>
         </tr>
     </tbody>
   </table>
