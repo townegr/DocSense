@@ -52,7 +52,7 @@ li.left {
   padding: 0 7px;
 }
 
-/*#calendar {
+#calendar {
   float: right;
   width: 600px;
 }
@@ -60,4 +60,12 @@ li.left {
 a.group.button.tiny {
   float: left;
   margin: 25px 0px 25px;
-}*/
+  display: block;
+
+
+height: 20px;
+font-size: 8pt;
+font-weight: bold;
+color: white;
+
+}

@@ -6,6 +6,7 @@
 </div>
 
   <% @grouped_encounters.each do |encounter| %>
+
   <!-- <div> -->
       <%= link_to encounter.first, schedule_path(date: encounter.first), method: :get, class: 'group button tiny' %>
     <!-- </div> -->
