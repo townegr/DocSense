@@ -15,8 +15,8 @@ body {
 
 a.small.button.radius {
   background-color: #ff7f00;
-  padding-right: 15px;
-  padding-left: 15px;
+/*  padding-right: 15px;
+  padding-left: 15px;*/
 }
 
 ul.right {
@@ -41,8 +41,14 @@ li.has-dropdown.not-click {
 
 ul.right {
   background-color: #808080;
+  padding: 1px 8px;
 }
 
 nav.top-bar {
   background-color: #808080;
 }
+
+li.left {
+  padding: 0 7px;
+}
+
