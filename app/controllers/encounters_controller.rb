@@ -18,7 +18,6 @@ class EncountersController < ApplicationController
 
       #querying via eager loading
       @grouped_encounters = current_user.encounters.includes(:user, :procedure).group_by_day(:created_at).count
-
   end
 
   def create
