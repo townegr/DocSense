@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 20140425204616) do
   enable_extension "plpgsql"
 
   create_table "encounters", force: true do |t|
-    t.string   "patient_name",       null: false
-    t.string   "insurance_provider", null: false
+    t.string   "patient_name",                                null: false
+    t.string   "insurance_provider",                          null: false
     t.text     "notes"
-    t.integer  "procedure_id",       null: false
-    t.integer  "user_id",            null: false
-    t.decimal  "physician_fee"
+    t.integer  "procedure_id",                                null: false
+    t.integer  "user_id",                                     null: false
+    t.decimal  "physician_fee",      precision: 10, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,28 +31,28 @@ ActiveRecord::Schema.define(version: 20140425204616) do
   add_index "encounters", ["user_id"], name: "index_encounters_on_user_id", using: :btree
 
   create_table "procedures", force: true do |t|
-    t.string  "code",        null: false
-    t.string  "description", null: false
-    t.decimal "work_rvu",    null: false
+    t.string  "code",                                 null: false
+    t.string  "description",                          null: false
+    t.decimal "work_rvu",    precision: 10, scale: 2, null: false
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "",                 null: false
-    t.string   "encrypted_password",     default: "",                 null: false
+    t.string   "email",                                           default: "",                 null: false
+    t.string   "encrypted_password",                              default: "",                 null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,                  null: false
+    t.integer  "sign_in_count",                                   default: 0,                  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name",                                          null: false
-    t.string   "last_name",                                           null: false
-    t.string   "job_title",              default: "Medical Provider", null: false
-    t.integer  "dollar_per_rvu",                                      null: false
+    t.string   "first_name",                                                                   null: false
+    t.string   "last_name",                                                                    null: false
+    t.string   "job_title",                                       default: "Medical Provider", null: false
+    t.decimal  "dollar_per_rvu",         precision: 10, scale: 2,                              null: false
     t.string   "username"
   end
 

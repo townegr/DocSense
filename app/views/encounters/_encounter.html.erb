@@ -6,6 +6,6 @@
   <td><%= encounter.procedure.code %></td>
   <td><%= encounter.procedure.work_rvu %></td>
   <td>$<%= encounter.set_physician_fee %></td>
-  <td><%= button_to 'Delete', encounter, method: :delete, remote: true %></td>
+  <td><%= button_to 'Delete', encounter, confirm: 'Are you sure?', method: :delete, remote: true %></td>
 </tr>
 

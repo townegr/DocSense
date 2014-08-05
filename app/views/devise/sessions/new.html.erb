@@ -8,12 +8,12 @@
 
       <div class="row">
         <div class="small-6 columns">
-          <%= f.input :login, required: false, autofocus: true %>
+          <%= f.text_field :login, placeholder: 'Username', required: false, autofocus: true %>
         </div>
       </div>
       <div class="row">
         <div class="small-6 columns">
-          <%= f.input :password, required: false %>
+          <%= f.input :password, placeholder: 'Password', required: false, label: false %>
         </div>
       </div>
       <div class="row">

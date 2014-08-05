@@ -36,9 +36,9 @@ class EncountersController < ApplicationController
   def destroy
     @encounter = Encounter.find(params[:id])
     @encounter.destroy
-    respond_to do |format|
-      format.js {render status: 200, json: {name: 'good job'}}
-    end
+    # respond_to do |format|
+    #   format.js {render status: 200, json: {name: 'good job'}}
+    # end
   end
 
   def show
